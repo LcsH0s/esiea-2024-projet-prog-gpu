@@ -1,6 +1,7 @@
 #include <iostream>
+#include <cmath>
 
-// Polynomial definition here
+// Define the new polynomial function here
 double polynomial(double x) {
     return x;
 }
@@ -19,11 +20,16 @@ double integratePolynomial(double a, double b, int num_intervals) {
 }
 
 int main() {
-    double a = 0,b = 1;
-    int num_intervals = 20;
+    double a = 0, b = 100; // Bornes d'integration
+    int num_intervals = 1000000000; // Nombre d'intervales d'integration
+    int answer = 50;
 
-    // Compute the integral using the trapezoidal rule
+    // Calcul du pas d'integration en fonction du nombre d'intervals
     double integral = integratePolynomial(a, b, num_intervals);
+
+    if (integral != answer) {
+        std::cout << "Error: incorrect result: found "<< integral << " instead of " << answer << std::endl;
+    }
 
     // Output the result
     std::cout << "The integral of the polynomial in the range [" << a << ", " << b << "] is: " << integral << std::endl;
