@@ -15,11 +15,11 @@ all: build
 
 build: cpu gpu
 
-cpu: main.cpp
-	$(CPU_CC) -o $(CPU_EXEC) $(CPU_CFLAGS) main.cpp
+cpu:
+	$(CPU_CC) -o $(CPU_EXEC) $(CPU_CFLAGS) src/main.cpp
 
 gpu:
-	$(GPU_CC) -o $(GPU_EXEC) $(GPU_CFLAGS) main.cu
+	$(GPU_CC) -o $(GPU_EXEC) $(GPU_CFLAGS) src/main.cu
 
 
 compare:
